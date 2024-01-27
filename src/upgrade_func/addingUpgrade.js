@@ -15,17 +15,17 @@ export async function  addUpgrade(object, setUpgrades) {
         await apiService.postAddUpgrades({name: "frontend", numberOfUpgrades: 0, cost: 1000});
     }
 
-    if (object.length === 4 && object[3].numberOfUpgrades >= 30){
+    if (object.length === 4 && object[3].numberOfUpgrades >= 20){
         setUpgrades([...object, {name: "algorithms", numberOfUpgrades: 0, cost: 5000}])
         await apiService.postAddUpgrades({name: "algorithms", numberOfUpgrades: 0, cost: 5000});
     }
 
-    if (object.length === 5 && object[4].numberOfUpgrades >= 40){
+    if (object.length === 5 && object[4].numberOfUpgrades >= 30){
         setUpgrades([...object, {name: "c++", numberOfUpgrades: 0, cost: 10000}])
         await apiService.postAddUpgrades({name: "c++", numberOfUpgrades: 0, cost: 10000});
     }
 
-    if (object.length === 6 && object[5].numberOfUpgrades >= 30){
+    if (object.length === 6 && object[5].numberOfUpgrades >= 20){
         setUpgrades([...object, {name: "oop", numberOfUpgrades: 0, cost: 20000}])
         await apiService.postAddUpgrades({name: "oop", numberOfUpgrades: 0, cost: 20000});
     }

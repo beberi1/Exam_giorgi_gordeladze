@@ -7,7 +7,7 @@ const ClickButton = ({score, setScore, numberOfClick}) => {
   const handleClick = () => {
 
     setScore((prevScore) => {   //წინა სქორის მნიშვნელობა
-      const newScore = prevScore + numberOfClick;    //ამატებს ჯერ 1 ს გაძლიერების შემდეგ მეტს
+      const newScore = prevScore + numberOfClick + 1;    //ამატებს ჯერ 1 ს გაძლიერების შემდეგ მეტს
       localStorage.setItem("score", JSON.stringify(newScore));    //ინახავს ლოკალურად
       return newScore;
     });

@@ -1,0 +1,15 @@
+.statimg {
+    width: 70px;
+    height: 70px;
+}
+
+.statDiv {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-bottom: 25px;
+}
+
+.place {
+    height: 77px;
+}

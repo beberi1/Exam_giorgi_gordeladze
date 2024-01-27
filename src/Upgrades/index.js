@@ -8,9 +8,6 @@ const Upgrades = ({uniqueNumber, object, score, setScore, setNumberOfClick, addS
   // uniqueNumber.uniqueNumber - არის უნიკალური რიცხვი
   // uniqueNumber.object = არის ობიექტი
 
-
-
-  
   const [cost, setCost] = useState(object.cost);
   
   // ვიღებს ინფორმაციას ფასებზე სერვერიდან
@@ -21,8 +18,6 @@ const Upgrades = ({uniqueNumber, object, score, setScore, setNumberOfClick, addS
   }, [monacemebi, uniqueNumber]);
   
 
-
-  
 
 
   const handleBuy = () => {
@@ -36,9 +31,7 @@ const Upgrades = ({uniqueNumber, object, score, setScore, setNumberOfClick, addS
       object.cost = cost;
       object.numberOfUpgrades = object.numberOfUpgrades+1;
 
-
       addStarter();
-
 
       if (uniqueNumber === 0){
         setNumberOfClick((prevNumberOfClick) => prevNumberOfClick + 1)

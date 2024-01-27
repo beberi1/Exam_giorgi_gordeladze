@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
 import { UpdateScore } from '../upgrade_func/upgradeFunctional';
 import { addUpgrade } from '../upgrade_func/addingUpgrade';
 import ApiService from '../services/apiService';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import Stats from "../stats/Stats";
+import AboutPage from "../AboutGame/AboutPage"
+
 
 
 // თამაშის წესები
@@ -19,7 +22,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 const App = () => {
   const apiService = new ApiService();
-
 
   // ერთ დაჭერაზე რამდენი ქულა მოემატება
   const [numberOfClick, setNumberOfClick] = useState(1);
@@ -140,19 +142,49 @@ const App = () => {
 
 
   return (
-    <div onClick={applyMouseCord} className="body_div">
-      <Header SaveProgress={SaveProgress}></Header>
+    <Router>
+      <div onClick={applyMouseCord} className="body_div">
+        <Header SaveProgress={SaveProgress} ></Header>
 
-      <ClickButton score={score} setScore={setScore} numberOfClick={numberOfClick}></ClickButton>
-      <div className="Upgrades_div">
-        {upgrades.map((upgrade, index) => (
-          <Upgrades key={index} uniqueNumber={index} object={upgrade} 
-          score={score} setScore={setScore} setNumberOfClick={setNumberOfClick} 
-          addStarter={addStarter} monacemebi={monacemebi}/>
-        ))}
+        <Routes>
+          <Route exact path="/" element={
+            <>
+              <ClickButton score={score} setScore={setScore} numberOfClick={numberOfClick} />
+              <div className="Upgrades_div">
+                {upgrades.map((upgrade, index) => (
+                  <Upgrades
+                    key={index}
+                    uniqueNumber={index}
+                    object={upgrade}
+                    score={score}
+                    setScore={setScore}
+                    setNumberOfClick={setNumberOfClick}
+                    addStarter={addStarter}
+                    monacemebi={monacemebi}
+                  />
+            
+                ))}
+              </div>
+            </>
+          } />
+          <Route exact path="/stats" element={
+            upgrades.map((upgrade, index) => (
+              <Stats 
+              key={index}
+              uniqueNumber={index}
+              object={upgrade}
+              />
+          ))
+          } />
+          <Route exact path="/aboutGame" element={
+            <AboutPage></AboutPage>
+          } />
+
+        </Routes>
       </div>
-    </div>
+    </Router>
   );
 };
+  
 
 export default App;
