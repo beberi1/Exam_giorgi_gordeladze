@@ -1,0 +1,30 @@
+{
+  "score": 1056,
+  "upgrades": [
+    {
+      "name": "clickupgr",
+      "numberOfUpgrades": 24,
+      "cost": 50
+    },
+    {
+      "name": "mosawoni",
+      "numberOfUpgrades": 9,
+      "cost": 150
+    },
+    {
+      "name": "python",
+      "numberOfUpgrades": 11,
+      "cost": 450
+    },
+    {
+      "name": "frontend",
+      "numberOfUpgrades": 30,
+      "cost": 1435
+    },
+    {
+      "name": "algorithms",
+      "numberOfUpgrades": 10,
+      "cost": 5135
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+.Upgrade_card_div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 65px;
+    margin-top: 30px;
+    width: 341px;
+    height:446px;
+    border-radius: 2px;
+    background-color: aquamarine;
+}
+
+.upgrade_img {
+    margin-top: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+
+.upgrade_button {
+    width: 140px;
+    height: 40px;
+}
+
+p {
+    margin-bottom: 8px;
+}

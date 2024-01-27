@@ -1,0 +1,29 @@
+.Main_header {
+    display: flex;
+    flex-direction: row;
+}
+
+.Head_img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 100%;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.pogress_save{
+  position: absolute;
+  height: 35px;
+  right: 15px;
+  top: 35px;
+}
