@@ -43,7 +43,7 @@ const Upgrades = ({uniqueNumber, object, score, setScore, setNumberOfClick, addS
 
   return (
     <div className='Upgrade_card_div'>
-      <p>ნაყიდი გაქ: {object.numberOfUpgrades}</p>
+      <p>ნაყიდია: {object.numberOfUpgrades}</p>
       <img className="upgrade_img" src={`/Upgrade_imgs/${uniqueNumber}.jpg`} alt='upgrade' />
       <p>ფასი: {cost}</p>
       <button className='upgrade_button' onClick={() => handleBuy()}>ყიდვა</button>

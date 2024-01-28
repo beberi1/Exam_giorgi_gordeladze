@@ -10,7 +10,16 @@
     font-size: 30px;
     width: 290px;
     height: 200px;
+    border: none;
+    background-color:darkslategrey;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
     animation: moveLeftAndRight 5s linear infinite;
+}
+
+.Main_button:hover{
+  background-color:rgb(70, 103, 103);
 }
 
 
@@ -22,3 +31,7 @@
       transform: translateX(200px);  
     }
   }
+
+.score_h1 {
+  color: white;
+}

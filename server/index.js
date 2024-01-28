@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
+    // მისამართი ჩაჰარდკოდებულია არ არის გამოყენებული .env
     app.use('/datai', createProxyMiddleware({ target: 'http://localhost:3003', changeOrigin: true }));
   };
 
@@ -143,42 +144,6 @@ app.post('/updateUpgrade', function(req, res) {
       }
   });
 });
-
-// app.post('/datas', function(req, res){
-//   const newInteger = req.body.integer;
-
-//   fs.readFile("db/data.json", 'utf8', function(err, data){
-//       if (err) {
-//           console.error(err);
-//           res.status(500).send('Internal Server Error');
-//           return;
-//       }
-//       let existingData;
-//       try {
-//           existingData = JSON.parse(data);
-//       } catch (parseError) {
-//           console.error(parseError);
-//           res.status(500).send('Error parsing existing data in data.json');
-//           return;
-//       }
-//       if (!Array.isArray(existingData)) {
-//           // If existingData is not an array, initialize it as an empty array
-//           existingData = [];
-//       }
-//       existingData.push({ integer: newInteger });
-//       fs.writeFile("db/data.json", JSON.stringify(existingData, null, 2), 'utf8', function(err){
-//           if (err) {
-//               console.error(err);
-//               res.status(500).send('Internal Server Error');
-//               return;
-//           }
-
-//           console.log('Data added successfully:', { integer: newInteger });
-//           res.status(201).json({ success: true, message: 'Data added successfully.' });
-//       });
-//   });
-// });
-
 
 
 const server = app.listen(3003, function(){

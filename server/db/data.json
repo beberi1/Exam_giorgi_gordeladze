@@ -1,15 +1,15 @@
 {
-  "score": 98021,
+  "score": 1,
   "upgrades": [
     {
       "name": "clickupgr",
-      "numberOfUpgrades": 4,
-      "cost": 90
+      "numberOfUpgrades": 0,
+      "cost": 0
     },
     {
-      "name": "mosawoni",
-      "numberOfUpgrades": 2,
-      "cost": 60
+      "name": "cisco",
+      "numberOfUpgrades": 0,
+      "cost": 5
     }
   ]
 }

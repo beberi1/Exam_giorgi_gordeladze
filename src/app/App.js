@@ -13,9 +13,12 @@ import AboutPage from "../AboutGame/AboutPage"
 
 
 // თამაშის წესები
-// აჭერთ ღილაკს აგროვებთ ქულებს და ყიდულობთ სხვადასხვა კურსს
-// თითოეული კურსი 1 წამში გიმატებთ რაღაც რაოდენობის ქულებს
-// თავიდან მხოლოდ 1 upgrade და 1 კურსი გამოგიჩნდებათ როცა კურსს 5 ჯერ იყიდით გამოჩნდება ახალი კურსი
+// აჭერთ ღილაკს აგროვებთ ქულებს და ყიდულობთ სხვადასხვა upgrade
+// თითოეული upgrade (პირველის გარდა) 1,5 წამში გიმატებთ რაღაც რაოდენობის ქულებს
+// თავიდან მხოლოდ 1 upgrade და 1 კურსი გამოგიჩნდებათ როცა კურსს 2 ჯერ იყიდით გამოჩნდება ახალი კურსი
+
+// ქულების კოდიდან მომატება თუ მოგინდებათ შეგიძლიათ შეხვიდეთ server/db/data.json-ში
+// და შეცვალოთ score-ს მნიშვნელობა
 
 
 
@@ -32,10 +35,9 @@ const App = () => {
     { name: "clickupgr", numberOfUpgrades: 0, cost: 15 },
     { name: "mosawoni", numberOfUpgrades: 0, cost: 30 },
   ]);
-
-
-
   const [score, setScore] = useState(1);
+
+
   // data ს წამოღება სერვერიდან
   useEffect(() => {
     const fetchData = async () => {
@@ -79,6 +81,11 @@ const App = () => {
       console.error('Error:', error.message);
     }
   };
+
+  // საიტის განახლებისას dataს შენახვის შეხსენება
+  window.addEventListener('beforeunload', function (event) {
+    event.returnValue = "არ დაგავიწყდეს თამაშის შენახვა";
+  });
 
 //კოდი რომელიც ამატებს upgrades
   function addStarter(){
@@ -128,7 +135,7 @@ const App = () => {
       }
     }
 
-    if ( clickNumber === (500 * numberOfSecrets)){
+    if ( clickNumber === (5000 * numberOfSecrets)){
       setScore((score) => score + 1000001);
       setNumberOfSecrets((numberOfSecrets) => numberOfSecrets + 1);
       // უნდა გაიშვას მოდალი განმარტებებით რა მოხდა და შემდეგი პრიზი როდის და რამდენი იქნება

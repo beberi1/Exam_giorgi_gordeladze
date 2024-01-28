@@ -1,7 +1,9 @@
 export function UpdateScore(object, score, setScore) {
 
-  console.log('Updating score with upgrades:', object[1].numberOfUpgrades);
+  // console.log('Updating score with upgrades:', object[1].numberOfUpgrades);
   // ეს კოდი გაეშვება ყოვალ 1.5 წამში
+  // ქულების მომატების ლოგიკა
+
 
   if (object[1].numberOfUpgrades >= 1){
     setScore((prevScore) => {   //წინა სქორის მნიშვნელობა
@@ -12,7 +14,6 @@ export function UpdateScore(object, score, setScore) {
   }
 
 
-  //ფასის მომატების ლოგიკა
   if (object.length >= 3 && object[2].numberOfUpgrades >= 1){
     setScore((prevScore) => {   
       const newScore = prevScore + (5*object[2].numberOfUpgrades);   
@@ -29,5 +30,55 @@ export function UpdateScore(object, score, setScore) {
     });
   }
 
+  if (object.length >= 5 && object[4].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (20*object[4].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
+
+  if (object.length >= 6 && object[5].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (30*object[5].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
+
+  if (object.length >= 7 && object[6].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (90*object[6].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
+
+  
+  if (object.length >= 8 && object[7].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (150*object[7].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
+
+  
+  if (object.length >= 9 && object[8].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (250*object[8].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
+
+  
+  if (object.length >= 10 && object[9].numberOfUpgrades >= 1){
+    setScore((prevScore) => {   
+      const newScore = prevScore + (350*object[9].numberOfUpgrades);   
+      localStorage.setItem("score", JSON.stringify(newScore));   
+      return newScore;
+    });
+  }
 
 }

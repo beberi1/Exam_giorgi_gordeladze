@@ -1,3 +1,22 @@
+# პროექტის შესახებ
+
+## თამაში აწყობილია React-ით და იყენებს JSON-server-ს, Backend - express
+
+# ჩართვის ინსტრუქცია
+
+## server ფოლდერის ტერმინალში უნდა გაეშვას: nodemon index.js
+## მთავარი ფოლდერის ტერმინალში უნდა გაეშვას: npm run start
+
+### თამაშში უნდა შეაგროვო ქულები
+### ქულების შეგროვება ხდება შუაში მოძრავ ღილაკზე დაკლიკებით
+### ქულებით შესაძლებელია upgrade-ების შეძენა და ასე უფრო მეტი ქულის დაგროვება
+### პირველის გარდა ყველა upgrade ავტომატურად ამატებს ქულებს ყოველ 1,5 წამში
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

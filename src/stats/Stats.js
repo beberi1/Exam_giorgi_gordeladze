@@ -15,7 +15,7 @@ const Stats = ({ uniqueNumber, object }) => {
         <div className="statDiv">
             <img className="statimg" src={`/Upgrade_imgs/${uniqueNumber}.jpg`} alt='upgrade'></img>
             <p>გაძლირების სახელი: <span> {object.name}</span></p>
-            <p>გაძლირების რაოდენობა: <span> {object.numberOfUpgrades} </span></p>
+            <p>ნაყიდია: <span> {object.numberOfUpgrades} </span></p>
             <p>საერთო ჯამში დახარჯული ქულები: <span> {sn}</span></p>
         </div>
     </>

@@ -13,3 +13,13 @@
 .place {
     height: 77px;
 }
+
+p {
+    color: white;
+    font-size: larger;
+}
+
+span {
+    color: white;
+    font-size: larger;
+}
